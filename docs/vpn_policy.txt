@@ -1,0 +1,3 @@
+TechCorp VPN Policy (excerpt)
+- VPN is mandatory when working outside the office.
+- Access requests are approved by the IT security team.
