@@ -1,5 +1,5 @@
-"""Application configuration - DELIBERATELY INSECURE (stage 2)."""
+"""Application configuration - secrets come from the environment only."""
+import os
 
-# PROBLEM 1: hardcoded secrets (caught by Gate 3 - Gitleaks)
-API_KEY = "Xk93hQ2mZp7LdVn84TrWb1YcAe56sUfJ"
-DB_PASSWORD = "Tr0ub4dor&3xK9pQ2wZm"
+API_KEY = os.environ.get("API_KEY")
+DB_PASSWORD = os.environ.get("DB_PASSWORD")

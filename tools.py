@@ -21,8 +21,7 @@ def _safe_eval(node):
 
 
 def calculate(expr):
-    # PROBLEM 3: eval() on user input = remote code execution (caught by Gate 1 - Bandit B307)
-    return eval(expr)
+    return _safe_eval(ast.parse(expr, mode="eval"))
 
 
 def run_command(cmd):
@@ -35,5 +34,4 @@ def run_command(cmd):
 
 
 def ticket_ref(owner, title):
-    # Weak hash (Bandit B324, HIGH severity)
-    return hashlib.md5((owner + title).encode()).hexdigest()[:12]
+    return hashlib.sha256((owner + title).encode()).hexdigest()[:12]
