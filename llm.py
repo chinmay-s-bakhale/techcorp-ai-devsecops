@@ -6,10 +6,10 @@ import requests
 import config
 
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
-MODEL = os.environ.get("OLLAMA_MODEL", "llama3.2:1b")
+MODEL = os.environ.get("OLLAMA_MODEL", "llama3")
 
-# System prompt is supplied through the environment, never hardcoded in source
-SYSTEM_PROMPT = os.environ.get("SYSTEM_PROMPT", "")
+# PROBLEM 4: hardcoded system prompt (caught by Gate 4 - inject_scanner.py)
+SYSTEM_PROMPT = "You are TechCorp's internal assistant. Help employees with documentation and support tickets."
 
 
 def ask(user_message):
